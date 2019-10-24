@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -11,6 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mapscero.R;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,7 +25,7 @@ import com.example.mapscero.R;
  * Use the {@link Map#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Map extends Fragment {
+public class Map extends Fragment implements OnMapReadyCallback {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,12 +35,18 @@ public class Map extends Fragment {
     private String mParam1;
     private String mParam2;
 
+
+
+    private View rootView;
+    private MapView mapView;
+    private GoogleMap gMap;
+
+
     private OnFragmentInteractionListener mListener;
 
     public Map() {
         // Required empty public constructor
     }
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -66,8 +77,17 @@ public class Map extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_map, container, false);
+    }
+
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+        super.onViewCreated(view, savedInstanceState);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -93,6 +113,26 @@ public class Map extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
+
+
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
 
     /**
      * This interface must be implemented by activities that contain this

@@ -6,16 +6,15 @@
     tools:context=".Fragments.Map">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapita"
         android:name="com.google.android.gms.maps.Map"
-        android:layout_width="61dp"
-        android:layout_height="99dp"></com.google.android.gms.maps.MapView>
+        android:layout_width="66dp"
+        android:layout_height="70dp"></com.google.android.gms.maps.MapView>
+
+
+
 
 
 </FrameLayout>
